@@ -1,22 +1,22 @@
 sudo: required
+language: generic 
+
 services:
   - docker
 
 before_install:
-  - docker build -t swfti/docker-react -f Dockerfile.dev .
+  - docker build -t sftwri/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true swfti/docker-react npm run test
-
-language: generic 
+  - docker run -e CI=true sftwri/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "docker-sftwri"
-  env: "docker-sftwri-env"
+  app: "docker-react"
+  env: "docker-react-env"
   bucket_name: "elasticbeanstalk-us-east-1-557507658850"
-  bucket_path: "docker-sftwri"
+  bucket_path: "docker-react"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
