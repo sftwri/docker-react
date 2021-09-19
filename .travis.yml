@@ -13,10 +13,10 @@ language: generic
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "docker-react-sftwri"
-  env: "docker-react-dev-sftwri"
+  app: "docker-sftwri"
+  env: "docker-sftwri-env"
   bucket_name: "elasticbeanstalk-us-east-1-557507658850"
-  bucket_path: "docker-react-sftwri"
+  bucket_path: "docker-sftwri"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
